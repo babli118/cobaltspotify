@@ -84,8 +84,8 @@ export default async function(o) {
     let filenameAttributes = {
         service: "youtube",
         id: o.id,
-        title: fileMetadata.title,
-        author: fileMetadata.artist,
+        title: global.SongName,
+        author: global.songAuthor,
         youtubeDubName: isDubbed ? o.dubLang : false
     }
 
