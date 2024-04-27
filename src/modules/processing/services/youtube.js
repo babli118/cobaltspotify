@@ -68,10 +68,10 @@ export default async function(o) {
             isDubbed = true
         }
     }
-    let fileMetadata = {
-        title: cleanString(info.basic_info.title.trim()),
-        artist: cleanString(info.basic_info.author.replace("- Topic", "").trim()),
-    }
+  let fileMetadata = {
+    title: global.SongName,
+    artist: global.songAuthor,
+  };
     if (info.basic_info.short_description && info.basic_info.short_description.startsWith("Provided to YouTube by")) {
         let descItems = info.basic_info.short_description.split("\n\n");
         fileMetadata.album = descItems[2];
