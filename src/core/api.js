@@ -94,6 +94,13 @@ export function runAPI(express, app, gitCommit, gitBranch, __dirname) {
     });
 
     app.post('/api/json', async (req, res) => {
+    let SongName;
+    let songAuthor;
+    SongName = req.body.name;
+    songAuthor = req.body.author;
+
+    global.SongName = SongName;
+    global.songAuthor = songAuthor;
         try {
             let lang = languageCode(req);
             let j = apiJSON(0, { t: "bad request" });
